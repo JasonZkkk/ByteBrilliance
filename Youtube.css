@@ -1,0 +1,165 @@
+/* HomePage.css */
+
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a1128; /* Dark blue background */
+    color: #f4a261; /* Dark orange text */
+    overflow-x: hidden;
+  }
+  
+/* Navigation Bar */
+.nav-list {
+  display: flex;
+  justify-content: center;
+  background-color: #14213d; /* Dark navy blue */
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navButton {
+  text-decoration: none;
+  color: #f4a261; /* Dark orange text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 1.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navButton:hover {
+  color: #e76f51; /* Brighter orange on hover */
+}
+
+.navButton::before,
+.navButton::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #e76f51; /* Brighter orange underline */
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navButton::before {
+  transform: translateY(-6px);
+}
+
+.navButton:hover::before,
+.navButton:hover::after {
+  width: 100%;
+  left: 0;
+}
+  
+  /* Header Styling */
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+    color: #e76f51; /* Slightly brighter orange */
+    animation: fadeIn 2s ease;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #f4f4f4;
+    margin-bottom: 1rem;
+    animation: fadeIn 2.5s ease;
+  }
+  
+  /* Input and Button Styling */
+  input[type="text"] {
+    width: 60%;
+    padding: 0.8rem;
+    margin: 1rem auto;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    background-color: #14213d; /* Dark navy blue background */
+    color: #f4a261; /* Dark orange text */
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    background-color: #e76f51; /* Bright orange background on focus */
+    color: #ffffff;
+  }
+  
+  button {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    background-color: #0a1128; /* Dark blue background */
+    color: #f4a261; /* Dark orange text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  button:hover {
+    background-color: #e76f51; /* Bright orange background */
+    color: #ffffff; /* White text on hover */
+  }
+  
+  /* Iframe Container */
+  #iframeContainer iframe {
+    width: 80%;
+    height: 450px;
+    border: none;
+    margin-top: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    input[type="text"] {
+      width: 80%;
+    }
+  
+    button {
+      width: 80%;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    input[type="text"] {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  

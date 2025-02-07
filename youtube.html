@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Embedder</title>
+    <link rel="stylesheet" href="Youtube.css">
+</head>
+<body>
+    <nav class="nav-list">
+    </ul>
+        <a class ="navButton" href="HomePage.html">
+            <li>Home</li>
+        </a>
+        <a class ="navButton" href="youtube.html">
+            <li>Youtube</li>
+        </a>
+        <a class ="navButton" href="GamePage.html">
+            <li>Games</li>
+        </a>
+        <a class ="navButton" href="Interstellar.html">
+            <li>Interstellar</li>
+        </a>
+    </ul>
+    </nav>
+    <h1>YouTube Video Embedder</h1>
+    <p>Enter a YouTube video link below:</p>
+    <input type="text" id="youtubeLink" placeholder="Enter YouTube link here..." />
+    <button onclick="generateIframe()">Generate Video</button>
+
+    <div id="iframeContainer"></div>
+
+    <script>
+        function generateIframe() {
+            const input = document.getElementById('youtubeLink').value;
+            const videoId = extractVideoId(input);
+            
+            if (videoId) {
+                const iframeContainer = document.getElementById('iframeContainer');
+                iframeContainer.innerHTML = `
+                    <iframe 
+                        src="https://www.youtube.com/embed/${videoId}" 
+                        allowfullscreen>
+                    </iframe>
+                `;
+            } else {
+                alert("Please enter a valid YouTube link.");
+            }
+        }
+
+        function extractVideoId(url) {
+            const regex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([^&]+)|youtu\.be\/([^&]+)/;
+            const match = url.match(regex);
+            return match ? (match[1] || match[2]) : null;
+        }
+    </script>
+
+</body>
+</html>
