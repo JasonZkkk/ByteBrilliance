@@ -16,7 +16,7 @@ function checkPassword() {
     if (inputPassword === correctPassword) {
         // Set expiry time for one week
         const now = new Date().getTime();
-        const oneWeek = 60 * 1000;
+        const oneWeek = 604800;
         localStorage.setItem('passwordExpiry', now + oneWeek);
 
         // Redirect to another HTML page
