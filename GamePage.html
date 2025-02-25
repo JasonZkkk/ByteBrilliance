@@ -6,6 +6,13 @@
   <title class="title">Dashboard</title>
   <link rel="stylesheet" href="GamePage.css">
   <link rel="icon" href="Canvaslogo.png">
+  <script>
+    // Check if the user is authenticated
+    if (!sessionStorage.getItem("authenticated")) {
+      // If not, redirect them to the homepage to enter the password
+      window.location.href = "encrypted/HomePage.html";
+    }
+  </script>  
 </head>
 <body>
     <nav class="nav-list">

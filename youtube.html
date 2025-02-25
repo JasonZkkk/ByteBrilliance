@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Video Embedder</title>
     <link rel="stylesheet" href="Youtube.css">
+    <script>
+        // Check if the user is authenticated
+        if (!sessionStorage.getItem("authenticated")) {
+          // If not, redirect them to the homepage to enter the password
+          window.location.href = "encrypted/HomePage.html";
+        }
+    </script>      
 </head>
 <body>
     <nav class="nav-list">
